@@ -23,16 +23,19 @@ class _SplashAppState extends State<SplashApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Colors.purple,
       body:Center(
         child:Column(
           mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CircleAvatar(
-            backgroundImage:NetworkImage('https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Spotify_App_Logo.svg/800px-Spotify_App_Logo.svg.png'),
-            radius: 50,
+            backgroundImage:NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS36qtpCv0ifw5-es-EIYrlJTw1VEqYMI6fVishZuS-c2OprIsr3Z2ZtZv5QUEBNXr52qI&usqp=CAU'),
+            radius: 100,
           ),
-          Text('Spotify',style: TextStyle(fontSize:40)),
+          SizedBox(
+            height: 15,
+          ),
+          Text('QUIZ TIME',style: TextStyle(fontSize:40,color:Colors.pink)),
         ],
       ),
       ),
