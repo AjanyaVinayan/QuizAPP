@@ -16,7 +16,7 @@ class _HomeAppState extends State<HomeApp> {
     Quiz(qus: 'cat have four legs',ans: true),
     Quiz(qus: 'green is the colour of leaf',ans: true),
     Quiz(qus: 'kite can fly',ans: true),
-    Quiz(qus: 'chilly is sweet',ans: false)
+    Quiz(qus: 'Chilly is sweet',ans: false)
   ];
   int count=0;
   void nextQus() {
