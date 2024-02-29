@@ -12,20 +12,32 @@ class _HomeAppState extends State<HomeApp> {
   List quiz=[
     Quiz(qus: 'blue is the colour of sky',ans: true),
     Quiz(qus:' Bats are blind',ans: false),
-    Quiz(qus:'Colorblind people can see color',ans: false),
+    Quiz(qus:'Colorblind people can see color',ans: true),
     Quiz(qus: 'cat have four legs',ans: true),
-    Quiz(qus: 'green is the colour of leaf',ans: true),
+    Quiz(qus: 'black is the colour of leaf',ans: true),
     Quiz(qus: 'kite can fly',ans: true),
     Quiz(qus: 'Chilly is sweet',ans: false)
   ];
   int count=0;
+  String result='';
   void nextQus() {
-    if (count < quiz.length) {
+    if (count < quiz.length-1) {
       setState((){
 
-        });
+      });
       count++;
     }
+  }
+  void compare(bool answer){
+    print(answer);
+    if(answer==quiz[count-1].ans)
+    {
+      result='correct answer';
+    }
+    else
+      {
+        result='wrong answer';
+      }
   }
   @override
   Widget build(BuildContext context) {
@@ -44,7 +56,8 @@ class _HomeAppState extends State<HomeApp> {
                 fixedSize: Size(200, 50),
                   backgroundColor: Colors.green,
                   textStyle: const TextStyle(fontSize: 20)),
-              onPressed: () {nextQus();},
+              onPressed: () {nextQus();
+                compare(true);},
               child: const Text('TRUE'),
             ),
             SizedBox(
@@ -55,9 +68,11 @@ class _HomeAppState extends State<HomeApp> {
                   fixedSize: Size(200, 50),
                   backgroundColor: Colors.red,
                   textStyle: const TextStyle(fontSize: 20)),
-              onPressed: () {nextQus();},
+              onPressed: () {nextQus();
+                compare(false);},
               child: const Text('FALSE'),
             ),
+            Text(result,style:TextStyle(color: Colors.white,fontSize: 20),)
           ],
         ),
       ),
